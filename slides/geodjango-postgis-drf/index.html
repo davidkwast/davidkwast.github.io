@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>slides slides</title>
+<title>geodjango-postgis-drf slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13244,31 +13244,32 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="GeoDjango-+-PostGIS-+-DRF">GeoDjango + PostGIS + DRF<a class="anchor-link" href="#GeoDjango-+-PostGIS-+-DRF">&#182;</a></h1><hr>
 <hr>
-<h2 id="david@kwast.me">david@kwast.me<a class="anchor-link" href="#david@kwast.me">&#182;</a></h2><h3 id="SciCrop.com">SciCrop.com<a class="anchor-link" href="#SciCrop.com">&#182;</a></h3><h4 id="Technology-Specialist">Technology Specialist<a class="anchor-link" href="#Technology-Specialist">&#182;</a></h4><hr>
-<p><a href="https://davidkwast.github.io/slides/geodjango-postgis-drf">https://davidkwast.github.io/slides/geodjango-postgis-drf</a></p>
-
+<h2 id="david@kwast.me">david@kwast.me<a class="anchor-link" href="#david@kwast.me">&#182;</a></h2><h3 id="https://SciCrop.com"><a href="https://SciCrop.com">https://SciCrop.com</a><a class="anchor-link" href="#https://SciCrop.com">&#182;</a></h3><h4 id="Technology-Specialist">Technology Specialist<a class="anchor-link" href="#Technology-Specialist">&#182;</a></h4><hr>
+<h2 id="https://davidkwast.github.io/slides/geodjango-postgis-drf"><a href="https://davidkwast.github.io/slides/geodjango-postgis-drf">https://davidkwast.github.io/slides/geodjango-postgis-drf</a><a class="anchor-link" href="#https://davidkwast.github.io/slides/geodjango-postgis-drf">&#182;</a></h2>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
-
-    </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="C&#243;digo-fonte">C&#243;digo-fonte<a class="anchor-link" href="#C&#243;digo-fonte">&#182;</a></h2><hr>
+<h3 id="https://github.com/davidkwast/geodjango-postgis-drf"><a href="https://github.com/davidkwast/geodjango-postgis-drf">https://github.com/davidkwast/geodjango-postgis-drf</a><a class="anchor-link" href="#https://github.com/davidkwast/geodjango-postgis-drf">&#182;</a></h3>
 </div>
 </div>
-
-</div></section><section>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Depend&#234;ncias">Depend&#234;ncias<a class="anchor-link" href="#Depend&#234;ncias">&#182;</a></h2>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">Code</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;Pipfile&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;toml&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13285,9 +13286,95 @@ a.anchor-link {
 
 
 
+<div class="output_html rendered_html output_subarea output_execute_result">
+<style>.output_html .hll { background-color: #ffffcc }
+.output_html  { background: #f8f8f8; }
+.output_html .c { color: #408080; font-style: italic } /* Comment */
+.output_html .err { border: 1px solid #FF0000 } /* Error */
+.output_html .k { color: #008000; font-weight: bold } /* Keyword */
+.output_html .o { color: #666666 } /* Operator */
+.output_html .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.output_html .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.output_html .cp { color: #BC7A00 } /* Comment.Preproc */
+.output_html .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.output_html .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.output_html .cs { color: #408080; font-style: italic } /* Comment.Special */
+.output_html .gd { color: #A00000 } /* Generic.Deleted */
+.output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .gr { color: #FF0000 } /* Generic.Error */
+.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.output_html .gi { color: #00A000 } /* Generic.Inserted */
+.output_html .go { color: #888888 } /* Generic.Output */
+.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.output_html .gs { font-weight: bold } /* Generic.Strong */
+.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.output_html .gt { color: #0044DD } /* Generic.Traceback */
+.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.output_html .kp { color: #008000 } /* Keyword.Pseudo */
+.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.output_html .kt { color: #B00040 } /* Keyword.Type */
+.output_html .m { color: #666666 } /* Literal.Number */
+.output_html .s { color: #BA2121 } /* Literal.String */
+.output_html .na { color: #7D9029 } /* Name.Attribute */
+.output_html .nb { color: #008000 } /* Name.Builtin */
+.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.output_html .no { color: #880000 } /* Name.Constant */
+.output_html .nd { color: #AA22FF } /* Name.Decorator */
+.output_html .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.output_html .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.output_html .nf { color: #0000FF } /* Name.Function */
+.output_html .nl { color: #A0A000 } /* Name.Label */
+.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.output_html .nv { color: #19177C } /* Name.Variable */
+.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.output_html .w { color: #bbbbbb } /* Text.Whitespace */
+.output_html .mb { color: #666666 } /* Literal.Number.Bin */
+.output_html .mf { color: #666666 } /* Literal.Number.Float */
+.output_html .mh { color: #666666 } /* Literal.Number.Hex */
+.output_html .mi { color: #666666 } /* Literal.Number.Integer */
+.output_html .mo { color: #666666 } /* Literal.Number.Oct */
+.output_html .sa { color: #BA2121 } /* Literal.String.Affix */
+.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */
+.output_html .sc { color: #BA2121 } /* Literal.String.Char */
+.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.output_html .s2 { color: #BA2121 } /* Literal.String.Double */
+.output_html .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.output_html .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.output_html .sx { color: #008000 } /* Literal.String.Other */
+.output_html .sr { color: #BB6688 } /* Literal.String.Regex */
+.output_html .s1 { color: #BA2121 } /* Literal.String.Single */
+.output_html .ss { color: #19177C } /* Literal.String.Symbol */
+.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.output_html .fm { color: #0000FF } /* Name.Function.Magic */
+.output_html .vc { color: #19177C } /* Name.Variable.Class */
+.output_html .vg { color: #19177C } /* Name.Variable.Global */
+.output_html .vi { color: #19177C } /* Name.Variable.Instance */
+.output_html .vm { color: #19177C } /* Name.Variable.Magic */
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="k">[[source]]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">&quot;pypi&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&quot;https://pypi.org/simple&quot;</span>
+<span class="n">verify_ssl</span> <span class="o">=</span> <span class="kc">true</span>
 
-<div class="output_text output_subarea output_execute_result">
-<pre>5</pre>
+<span class="k">[dev-packages]</span>
+<span class="n">jupyter</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<span class="n">ipython</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+
+<span class="k">[packages]</span>
+<span class="n">django</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<span class="n">psycopg2-binary</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<span class="n">djangorestframework</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<span class="n">numpy</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<span class="n">gdal</span> <span class="o">=</span> <span class="s">&quot;==2.2.3&quot;</span>
+
+<span class="k">[requires]</span>
+<span class="n">python_version</span> <span class="o">=</span> <span class="s">&quot;3.7&quot;</span>
+</pre></div>
+
 </div>
 
 </div>
@@ -13295,6 +13382,67 @@ a.anchor-link {
 </div>
 </div>
 
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="GDAL">GDAL<a class="anchor-link" href="#GDAL">&#182;</a></h3><p>a translator library for raster and vector geospatial data formats</p>
+<h4 id="Sistema-Operacional">Sistema Operacional<a class="anchor-link" href="#Sistema-Operacional">&#182;</a></h4><div class="highlight"><pre><span></span>$ apt install gdal-bin libgdal-dev
+
+$ gdalinfo --version
+GDAL <span class="m">2</span>.2.3, released <span class="m">2017</span>/11/20
+</pre></div>
+<h4 id="Pip(Env)">Pip(Env)<a class="anchor-link" href="#Pip(Env)">&#182;</a></h4><div class="highlight"><pre><span></span>$ pipenv install --sequential numpy <span class="s2">&quot;gdal==2.2.3&quot;</span>
+</pre></div>
+<h4 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h4><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span><span class="p">;</span> <span class="n">gdal</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span> <span class="c1"># type: ignore</span>
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">org</span><span class="p">;</span> <span class="n">ogr</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span> <span class="c1"># type: ignore</span>
+</pre></div>
+<hr>
+<ul>
+<li><a href="https://gdal.org/python/">https://gdal.org/python/</a></li>
+<li><a href="https://gdal.org/about.html#what-is-gdal">https://gdal.org/about.html#what-is-gdal</a></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PostgreSQL-+-PostGIS">PostgreSQL + PostGIS<a class="anchor-link" href="#PostgreSQL-+-PostGIS">&#182;</a></h3><h4 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h4><div class="highlight"><pre><span></span>pipenv install psycopg2-binary
+</pre></div>
+<h4 id="SQL">SQL<a class="anchor-link" href="#SQL">&#182;</a></h4><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">EXTENSION</span> <span class="n">POSTGIS</span><span class="p">;</span>
+</pre></div>
+<hr>
+<ul>
+<li><a href="https://pypi.org/project/psycopg2-binary/">https://pypi.org/project/psycopg2-binary/</a><ul>
+<li>The binary package is a practical choice for development and testing but in production it is advised to use the package built from sources.</li>
+</ul>
+</li>
+<li><a href="https://postgis.net/documentation/">https://postgis.net/documentation/</a></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Django-+-GeoDjango">Django + GeoDjango<a class="anchor-link" href="#Django-+-GeoDjango">&#182;</a></h3><h4 id="settings.py">settings.py<a class="anchor-link" href="#settings.py">&#182;</a></h4><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.gis.db.backends.postgis&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+<h4 id="models.py">models.py<a class="anchor-link" href="#models.py">&#182;</a></h4><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.gis.db</span> <span class="kn">import</span> <span class="n">models</span>
+</pre></div>
+<hr>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/2.2/ref/contrib/gis/">https://docs.djangoproject.com/en/2.2/ref/contrib/gis/</a></li>
+</ul>
+
+</div>
+</div>
 </div></section></section>
 </div>
 </div>
