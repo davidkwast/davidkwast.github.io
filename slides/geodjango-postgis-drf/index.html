@@ -13244,7 +13244,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="GeoDjango-+-PostGIS-+-DRF">GeoDjango + PostGIS + DRF<a class="anchor-link" href="#GeoDjango-+-PostGIS-+-DRF">&#182;</a></h1><hr>
 <hr>
-<h2 id="david@kwast.me">david@kwast.me<a class="anchor-link" href="#david@kwast.me">&#182;</a></h2><h3 id="https://SciCrop.com"><a href="https://SciCrop.com">https://SciCrop.com</a><a class="anchor-link" href="#https://SciCrop.com">&#182;</a></h3><h4 id="Technology-Specialist">Technology Specialist<a class="anchor-link" href="#Technology-Specialist">&#182;</a></h4><hr>
+<h2 id="david.kwast@scicrop.com">david.kwast@scicrop.com<a class="anchor-link" href="#david.kwast@scicrop.com">&#182;</a></h2><h3 id="Technology-Specialist-@-https://SciCrop.com">Technology Specialist @ <a href="https://SciCrop.com">https://SciCrop.com</a><a class="anchor-link" href="#Technology-Specialist-@-https://SciCrop.com">&#182;</a></h3><hr>
 <h2 id="https://davidkwast.github.io/slides/geodjango-postgis-drf"><a href="https://davidkwast.github.io/slides/geodjango-postgis-drf">https://davidkwast.github.io/slides/geodjango-postgis-drf</a><a class="anchor-link" href="#https://davidkwast.github.io/slides/geodjango-postgis-drf">&#182;</a></h2>
 </div>
 </div>
@@ -13269,7 +13269,7 @@ a.anchor-link {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">Code</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;Pipfile&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;toml&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">Code</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./Pipfile&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;toml&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13370,6 +13370,8 @@ a.anchor-link {
 <span class="n">djangorestframework</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
 <span class="n">numpy</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
 <span class="n">gdal</span> <span class="o">=</span> <span class="s">&quot;==2.2.3&quot;</span>
+<span class="n">python-decouple</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
+<span class="n">requests</span> <span class="o">=</span> <span class="s">&quot;*&quot;</span>
 
 <span class="k">[requires]</span>
 <span class="n">python_version</span> <span class="o">=</span> <span class="s">&quot;3.7&quot;</span>
@@ -13382,20 +13384,32 @@ a.anchor-link {
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>* Ubuntu 18.04</p>
+
+</div>
+</div>
 </div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="GDAL">GDAL<a class="anchor-link" href="#GDAL">&#182;</a></h3><p>a translator library for raster and vector geospatial data formats</p>
-<h4 id="Sistema-Operacional">Sistema Operacional<a class="anchor-link" href="#Sistema-Operacional">&#182;</a></h4><div class="highlight"><pre><span></span>$ apt install gdal-bin libgdal-dev
+<h4 id="Sistema-Operacional">Sistema Operacional<a class="anchor-link" href="#Sistema-Operacional">&#182;</a></h4><div class="highlight"><pre><span></span><span class="gp">foo@bar:~$</span> apt install gdal-bin libgdal-dev
 
-$ gdalinfo --version
-GDAL <span class="m">2</span>.2.3, released <span class="m">2017</span>/11/20
+<span class="gp">foo@bar:~$</span> gdalinfo --version
+<span class="go">GDAL 2.2.3, released 2017/11/20</span>
 </pre></div>
-<h4 id="Pip(Env)">Pip(Env)<a class="anchor-link" href="#Pip(Env)">&#182;</a></h4><div class="highlight"><pre><span></span>$ pipenv install --sequential numpy <span class="s2">&quot;gdal==2.2.3&quot;</span>
+<h4 id="Pip(Env)">Pip(Env)<a class="anchor-link" href="#Pip(Env)">&#182;</a></h4><div class="highlight"><pre><span></span><span class="gp">foo@bar:~$</span> pipenv install numpy
+
+<span class="gp">foo@bar:~$</span> <span class="nb">export</span> <span class="nv">CPLUS_INCLUDE_PATH</span><span class="o">=</span>/usr/include/gdal
+<span class="gp">foo@bar:~$</span> <span class="nb">export</span> <span class="nv">C_INCLUDE_PATH</span><span class="o">=</span>/usr/include/gdal
+<span class="gp">foo@bar:~$</span> pipenv install <span class="s2">&quot;gdal==2.2.3&quot;</span>
 </pre></div>
 <h4 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h4><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">gdal</span><span class="p">;</span> <span class="n">gdal</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span> <span class="c1"># type: ignore</span>
-<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">org</span><span class="p">;</span> <span class="n">ogr</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span> <span class="c1"># type: ignore</span>
+<span class="kn">from</span> <span class="nn">osgeo</span> <span class="kn">import</span> <span class="n">ogr</span><span class="p">;</span> <span class="n">ogr</span><span class="o">.</span><span class="n">UseExceptions</span><span class="p">()</span> <span class="c1"># type: ignore</span>
 </pre></div>
 <hr>
 <ul>
@@ -13409,7 +13423,7 @@ GDAL <span class="m">2</span>.2.3, released <span class="m">2017</span>/11/20
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="PostgreSQL-+-PostGIS">PostgreSQL + PostGIS<a class="anchor-link" href="#PostgreSQL-+-PostGIS">&#182;</a></h3><h4 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h4><div class="highlight"><pre><span></span>pipenv install psycopg2-binary
+<h3 id="PostgreSQL-+-PostGIS">PostgreSQL + PostGIS<a class="anchor-link" href="#PostgreSQL-+-PostGIS">&#182;</a></h3><h4 id="Python">Python<a class="anchor-link" href="#Python">&#182;</a></h4><div class="highlight"><pre><span></span><span class="gp">foo@bar:~$</span> pipenv install psycopg2-binary
 </pre></div>
 <h4 id="SQL">SQL<a class="anchor-link" href="#SQL">&#182;</a></h4><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="n">EXTENSION</span> <span class="n">POSTGIS</span><span class="p">;</span>
 </pre></div>
@@ -13428,11 +13442,21 @@ GDAL <span class="m">2</span>.2.3, released <span class="m">2017</span>/11/20
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Django-+-GeoDjango">Django + GeoDjango<a class="anchor-link" href="#Django-+-GeoDjango">&#182;</a></h3><h4 id="settings.py">settings.py<a class="anchor-link" href="#settings.py">&#182;</a></h4><div class="highlight"><pre><span></span><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+<h3 id="Django-+-GeoDjango-+-DRF">Django + GeoDjango + DRF<a class="anchor-link" href="#Django-+-GeoDjango-+-DRF">&#182;</a></h3><h4 id="settings.py">settings.py<a class="anchor-link" href="#settings.py">&#182;</a></h4><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="o">...</span>
+    <span class="s1">&#39;django.contrib.gis&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;rest_framework&#39;</span><span class="p">,</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+<span class="o">...</span>
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s1">&#39;django.contrib.gis.db.backends.postgis&#39;</span><span class="p">,</span>
+        <span class="o">...</span>
     <span class="p">},</span>
 <span class="p">}</span>
+<span class="o">...</span>
 </pre></div>
 <h4 id="models.py">models.py<a class="anchor-link" href="#models.py">&#182;</a></h4><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.gis.db</span> <span class="kn">import</span> <span class="n">models</span>
 </pre></div>
@@ -13443,6 +13467,431 @@ GDAL <span class="m">2</span>.2.3, released <span class="m">2017</span>/11/20
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Django">Django<a class="anchor-link" href="#Django">&#182;</a></h2><h3 id="shell">shell<a class="anchor-link" href="#shell">&#182;</a></h3><div class="highlight"><pre><span></span><span class="gp">foo@bar:~$</span> django-admin startproject restgis .
+
+<span class="gp">foo@bar:~$</span> mkdir restgis/geoapi
+
+<span class="gp">foo@bar:~$</span> python manage.py startapp geoapi restgis/geoapi
+</pre></div>
+<hr>
+<ul>
+<li><a href="https://docs.python-guide.org/writing/structure/#regarding-django-applications">https://docs.python-guide.org/writing/structure/#regarding-django-applications</a></li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="gp">foo@bar:~$</span> ls -l restgis/
+<span class="go">total 16</span>
+<span class="go">drwxrwxr-x 3 kwast kwast 4096 mai 24 16:40 geoapi</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast    0 mai 24 16:37 __init__.py</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast 3091 mai 24 16:37 settings.py</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast  749 mai 24 16:37 urls.py</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast  391 mai 24 16:37 wsgi.py</span>
+
+<span class="gp">foo@bar:~$</span> ls -l restgis/geoapi/
+<span class="go">total 24</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast   63 mai 24 16:40 admin.py</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast   87 mai 24 16:40 apps.py</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast    0 mai 24 16:40 __init__.py</span>
+<span class="go">drwxrwxr-x 2 kwast kwast 4096 mai 24 16:40 migrations</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast   57 mai 24 16:40 models.py</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast   60 mai 24 16:40 tests.py</span>
+<span class="go">-rw-rw-r-- 1 kwast kwast   63 mai 24 16:40 views.py</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">settings</span><span class="o">.</span><span class="n">INSTALLED_APPS</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;django.contrib.auth&#39;,
+ &#39;django.contrib.contenttypes&#39;,
+ &#39;django.contrib.staticfiles&#39;,
+ &#39;django.contrib.gis&#39;,
+ &#39;rest_framework&#39;,
+ &#39;restgis.geoapi&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="gp">foo@bar:~$</span> python manage.py runserver
+<span class="go">Watching for file changes with StatReloader</span>
+<span class="go">Performing system checks...</span>
+
+<span class="go">System check identified no issues (0 silenced).</span>
+
+<span class="go">May 25, 2019 - 02:29:36</span>
+<span class="go">Django version 2.2.1, using settings &#39;restgis.settings&#39;</span>
+<span class="go">Starting development server at http://127.0.0.1:8000/</span>
+<span class="go">Quit the server with CONTROL-C.</span>
+</pre></div>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">Code</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./restgis/geoapi/api/test_api.py&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<style>.output_html .hll { background-color: #ffffcc }
+.output_html  { background: #f8f8f8; }
+.output_html .c { color: #408080; font-style: italic } /* Comment */
+.output_html .err { border: 1px solid #FF0000 } /* Error */
+.output_html .k { color: #008000; font-weight: bold } /* Keyword */
+.output_html .o { color: #666666 } /* Operator */
+.output_html .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.output_html .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.output_html .cp { color: #BC7A00 } /* Comment.Preproc */
+.output_html .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.output_html .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.output_html .cs { color: #408080; font-style: italic } /* Comment.Special */
+.output_html .gd { color: #A00000 } /* Generic.Deleted */
+.output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .gr { color: #FF0000 } /* Generic.Error */
+.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.output_html .gi { color: #00A000 } /* Generic.Inserted */
+.output_html .go { color: #888888 } /* Generic.Output */
+.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.output_html .gs { font-weight: bold } /* Generic.Strong */
+.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.output_html .gt { color: #0044DD } /* Generic.Traceback */
+.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.output_html .kp { color: #008000 } /* Keyword.Pseudo */
+.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.output_html .kt { color: #B00040 } /* Keyword.Type */
+.output_html .m { color: #666666 } /* Literal.Number */
+.output_html .s { color: #BA2121 } /* Literal.String */
+.output_html .na { color: #7D9029 } /* Name.Attribute */
+.output_html .nb { color: #008000 } /* Name.Builtin */
+.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.output_html .no { color: #880000 } /* Name.Constant */
+.output_html .nd { color: #AA22FF } /* Name.Decorator */
+.output_html .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.output_html .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.output_html .nf { color: #0000FF } /* Name.Function */
+.output_html .nl { color: #A0A000 } /* Name.Label */
+.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.output_html .nv { color: #19177C } /* Name.Variable */
+.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.output_html .w { color: #bbbbbb } /* Text.Whitespace */
+.output_html .mb { color: #666666 } /* Literal.Number.Bin */
+.output_html .mf { color: #666666 } /* Literal.Number.Float */
+.output_html .mh { color: #666666 } /* Literal.Number.Hex */
+.output_html .mi { color: #666666 } /* Literal.Number.Integer */
+.output_html .mo { color: #666666 } /* Literal.Number.Oct */
+.output_html .sa { color: #BA2121 } /* Literal.String.Affix */
+.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */
+.output_html .sc { color: #BA2121 } /* Literal.String.Char */
+.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.output_html .s2 { color: #BA2121 } /* Literal.String.Double */
+.output_html .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.output_html .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.output_html .sx { color: #008000 } /* Literal.String.Other */
+.output_html .sr { color: #BB6688 } /* Literal.String.Regex */
+.output_html .s1 { color: #BA2121 } /* Literal.String.Single */
+.output_html .ss { color: #19177C } /* Literal.String.Symbol */
+.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.output_html .fm { color: #0000FF } /* Name.Function.Magic */
+.output_html .vc { color: #19177C } /* Name.Variable.Class */
+.output_html .vg { color: #19177C } /* Name.Variable.Global */
+.output_html .vi { color: #19177C } /* Name.Variable.Instance */
+.output_html .vm { color: #19177C } /* Name.Variable.Magic */
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">rest_framework.response</span> <span class="kn">import</span> <span class="n">Response</span>
+<span class="kn">from</span> <span class="nn">rest_framework.decorators</span> <span class="kn">import</span> <span class="n">api_view</span>
+
+<span class="c1"># /apit/test</span>
+
+<span class="nd">@api_view</span><span class="p">([</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">test_view</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Response</span><span class="p">({</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;OK&#39;</span><span class="p">})</span>
+</pre></div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">HOST</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;http://localhost:8000&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{HOST}</span><span class="s1">/api/test&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;data&#39;: &#39;OK&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="o">.</span><span class="n">Code</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;./restgis/geoapi/models.py&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<style>.output_html .hll { background-color: #ffffcc }
+.output_html  { background: #f8f8f8; }
+.output_html .c { color: #408080; font-style: italic } /* Comment */
+.output_html .err { border: 1px solid #FF0000 } /* Error */
+.output_html .k { color: #008000; font-weight: bold } /* Keyword */
+.output_html .o { color: #666666 } /* Operator */
+.output_html .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.output_html .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.output_html .cp { color: #BC7A00 } /* Comment.Preproc */
+.output_html .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.output_html .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.output_html .cs { color: #408080; font-style: italic } /* Comment.Special */
+.output_html .gd { color: #A00000 } /* Generic.Deleted */
+.output_html .ge { font-style: italic } /* Generic.Emph */
+.output_html .gr { color: #FF0000 } /* Generic.Error */
+.output_html .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.output_html .gi { color: #00A000 } /* Generic.Inserted */
+.output_html .go { color: #888888 } /* Generic.Output */
+.output_html .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.output_html .gs { font-weight: bold } /* Generic.Strong */
+.output_html .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.output_html .gt { color: #0044DD } /* Generic.Traceback */
+.output_html .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.output_html .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.output_html .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.output_html .kp { color: #008000 } /* Keyword.Pseudo */
+.output_html .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.output_html .kt { color: #B00040 } /* Keyword.Type */
+.output_html .m { color: #666666 } /* Literal.Number */
+.output_html .s { color: #BA2121 } /* Literal.String */
+.output_html .na { color: #7D9029 } /* Name.Attribute */
+.output_html .nb { color: #008000 } /* Name.Builtin */
+.output_html .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.output_html .no { color: #880000 } /* Name.Constant */
+.output_html .nd { color: #AA22FF } /* Name.Decorator */
+.output_html .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.output_html .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.output_html .nf { color: #0000FF } /* Name.Function */
+.output_html .nl { color: #A0A000 } /* Name.Label */
+.output_html .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.output_html .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.output_html .nv { color: #19177C } /* Name.Variable */
+.output_html .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.output_html .w { color: #bbbbbb } /* Text.Whitespace */
+.output_html .mb { color: #666666 } /* Literal.Number.Bin */
+.output_html .mf { color: #666666 } /* Literal.Number.Float */
+.output_html .mh { color: #666666 } /* Literal.Number.Hex */
+.output_html .mi { color: #666666 } /* Literal.Number.Integer */
+.output_html .mo { color: #666666 } /* Literal.Number.Oct */
+.output_html .sa { color: #BA2121 } /* Literal.String.Affix */
+.output_html .sb { color: #BA2121 } /* Literal.String.Backtick */
+.output_html .sc { color: #BA2121 } /* Literal.String.Char */
+.output_html .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.output_html .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.output_html .s2 { color: #BA2121 } /* Literal.String.Double */
+.output_html .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.output_html .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.output_html .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.output_html .sx { color: #008000 } /* Literal.String.Other */
+.output_html .sr { color: #BB6688 } /* Literal.String.Regex */
+.output_html .s1 { color: #BA2121 } /* Literal.String.Single */
+.output_html .ss { color: #19177C } /* Literal.String.Symbol */
+.output_html .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.output_html .fm { color: #0000FF } /* Name.Function.Magic */
+.output_html .vc { color: #19177C } /* Name.Variable.Class */
+.output_html .vg { color: #19177C } /* Name.Variable.Global */
+.output_html .vi { color: #19177C } /* Name.Variable.Instance */
+.output_html .vm { color: #19177C } /* Name.Variable.Magic */
+.output_html .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.contrib.gis.db</span> <span class="kn">import</span> <span class="n">models</span>
+</pre></div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<ul>
+<li><a href="https://docs.djangoproject.com/en/2.2/ref/contrib/gis/model-api/">https://docs.djangoproject.com/en/2.2/ref/contrib/gis/model-api/</a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
 </div></section></section>
 </div>
 </div>
